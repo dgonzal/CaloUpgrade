@@ -77,5 +77,8 @@ def myForwardECAL( process ):
 
 
 
+	# Simulate in 1 X0 steps
+	process.famosSimHits.Calorimetry.ECAL.bFixedLength = cms.bool(True)
+
 	# Activate the LogDebug
 	process.famosSimHits.Calorimetry.CalorimeterProperties.EndcapCalorimeterProperties.debug = cms.bool(True)

@@ -250,6 +250,8 @@ void Barbecue(string sIn){
   cffout << "\t" << endl;
   cffout << "\t# the width in cm of the passive layer" << endl;
   cffout << "\tprocess.famosSimHits.Calorimetry.CalorimeterProperties.EndcapCalorimeterProperties.dp = cms.double(" << Form("%.2f",dp) << ")\n\n\n" << endl;
+  cffout << "\t# Simulate in 1 X0 steps" << endl;
+  cffout << "\tprocess.famosSimHits.Calorimetry.ECAL.bFixedLength = cms.bool(True)\n" << endl;
   cffout << "\t# Activate the LogDebug" << endl;
   cffout << "\tprocess.famosSimHits.Calorimetry.CalorimeterProperties.EndcapCalorimeterProperties.debug = cms.bool(True)" << endl;
   

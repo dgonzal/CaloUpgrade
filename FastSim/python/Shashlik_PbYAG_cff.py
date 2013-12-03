@@ -51,8 +51,7 @@ def myForwardECAL( process ):
 	# Moliere Radius in cm.If value set to -1, FastSim uses internally the
 	# formula : Es/criticalEnergy*X0 with Es=sqrt(4*Pi/alphaEM)*me*c^2=0.0212 GeV
 	# This value is known to be 2.190 cm for ECAL Endcap, but the formula gives 2.159 cm
-#	process.famosSimHits.Calorimetry.CalorimeterProperties.EndcapCalorimeterProperties.moliereRadius = cms.double(1.80)
-	process.famosSimHits.Calorimetry.CalorimeterProperties.EndcapCalorimeterProperties.moliereRadius = cms.double(1.90)
+	process.famosSimHits.Calorimetry.CalorimeterProperties.EndcapCalorimeterProperties.moliereRadius = cms.double(1.80)
 	
 	# Is a homogenious detector?
 	process.famosSimHits.Calorimetry.CalorimeterProperties.EndcapCalorimeterProperties.bHom = cms.bool(False)
@@ -64,8 +63,7 @@ def myForwardECAL( process ):
 	process.famosSimHits.Calorimetry.CalorimeterProperties.EndcapCalorimeterProperties.Fs = cms.double(1.47)
 	
 	# e/mip for the calorimeter. May be estimated by 1./(1+0.007*(Zp-Za))
-#	process.famosSimHits.Calorimetry.CalorimeterProperties.EndcapCalorimeterProperties.ehat = cms.double(0.71)
-	process.famosSimHits.Calorimetry.CalorimeterProperties.EndcapCalorimeterProperties.ehat = cms.double(0.795)
+	process.famosSimHits.Calorimetry.CalorimeterProperties.EndcapCalorimeterProperties.ehat = cms.double(0.71)
 	
 	# a rough estimate of ECAL resolution sigma/E = resE/sqrt(E)
 	# it is used to generate Nspots in radial profiles.
@@ -78,6 +76,9 @@ def myForwardECAL( process ):
 	process.famosSimHits.Calorimetry.CalorimeterProperties.EndcapCalorimeterProperties.dp = cms.double(0.35)
 
 
+
+	# Simulate in 1 X0 steps
+	process.famosSimHits.Calorimetry.ECAL.bFixedLength = cms.bool(True)
 
 	# Activate the LogDebug
 	process.famosSimHits.Calorimetry.CalorimeterProperties.EndcapCalorimeterProperties.debug = cms.bool(True)
